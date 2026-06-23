@@ -1,0 +1,49 @@
+---
+import config from '../../site.json';
+---
+<header class="navbar bg-base-100/80 backdrop-blur-md sticky top-0 z-50 border-b border-base-300/50">
+  <div class="navbar-start">
+    <a href="/" class="btn btn-ghost text-xl font-heading font-bold tracking-tight">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      </svg>
+      {config.business_name}
+    </a>
+  </div>
+
+  <nav class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1 gap-1">
+      <li><a href="#programs" class="font-medium">Programs</a></li>
+      <li><a href="#events" class="font-medium">Events</a></li>
+      <li><a href="#volunteer" class="font-medium">Volunteer</a></li>
+      <li><a href="#about" class="font-medium">About</a></li>
+      <li><a href="#contact" class="font-medium">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="navbar-end gap-2">
+    <a href="#donate" class="btn btn-primary btn-sm md:btn-md">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      Donate
+    </a>
+
+    <!-- Mobile menu -->
+    <div class="dropdown dropdown-end lg:hidden">
+      <label tabindex="0" class="btn btn-ghost btn-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+        </svg>
+      </label>
+      <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-lg bg-base-200 rounded-box w-52">
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#volunteer">Volunteer</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#donate" class="text-primary font-semibold">Donate</a></li>
+      </ul>
+    </div>
+  </div>
+</header>

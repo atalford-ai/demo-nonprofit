@@ -1,0 +1,54 @@
+---
+import config from '../../site.json';
+---
+<section id="donate" class="py-24 px-6 lg:px-12 bg-base-200/50">
+  <div class="container mx-auto max-w-5xl">
+    <div class="text-center mb-16 fade-in-up">
+      <span class="badge badge-outline border-primary text-primary text-xs tracking-widest uppercase mb-4">Support Our Mission</span>
+      <h2 class="text-4xl md:text-5xl font-heading font-bold">Make a Difference Today</h2>
+      <p class="text-base-content/60 mt-4 max-w-xl mx-auto">Your generosity directly funds our programs and helps us reach more people every day.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 stagger-children mb-12">
+      {config.donate_tiers.map((tier) => (
+        <div class={`card bg-base-100 shadow-lg border ${tier.popular ? 'border-primary border-2 relative' : 'border-base-300/50'}`}>
+          {tier.popular && (
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+              <span class="badge badge-primary badge-sm">Most Popular</span>
+            </div>
+          )}
+          <div class="card-body items-center text-center">
+            <h3 class="card-title font-heading text-xl">{tier.name}</h3>
+            <p class="text-3xl font-heading font-bold text-primary my-2">{tier.amount}</p>
+            <ul class="space-y-3 text-sm text-base-content/70 w-full text-left my-4">
+              {tier.features.map((feature) => (
+                <li class="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            <button class={`btn w-full ${tier.popular ? 'btn-primary' : 'btn-outline btn-primary'}`}>
+              Donate {tier.amount}
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Custom amount -->
+    <div class="card bg-base-100 shadow-lg border border-base-300/50 max-w-lg mx-auto fade-in-up">
+      <div class="card-body items-center text-center">
+        <h3 class="font-heading font-semibold text-lg">Custom Amount</h3>
+        <p class="text-base-content/60 text-sm mb-4">Give any amount that feels right to you.</p>
+        <div class="flex items-center gap-3 w-full max-w-xs">
+          <span class="text-2xl font-heading font-bold text-base-content/40">$</span>
+          <input type="number" placeholder="0.00" class="input input-bordered w-full bg-base-100 focus:border-primary text-center text-lg" min="1" />
+        </div>
+        <button class="btn btn-primary mt-4 w-full max-w-xs">Donate Now</button>
+      </div>
+    </div>
+  </div>
+</section>

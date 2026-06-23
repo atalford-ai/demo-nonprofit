@@ -1,0 +1,114 @@
+{
+  "business_name": "Rise Together",
+  "tagline": "Community. Impact. Change.",
+  "description": "Empowering communities through education, mentorship, and direct action. Together, we rise.",
+  "theme": {
+    "light": "emerald",
+    "dark": "forest"
+  },
+  "fonts": {
+    "heading": "Poppins",
+    "body": "Nunito Sans"
+  },
+  "is_demo": true,
+  "demo_cta": "https://altitudz.com",
+  "contact": {
+    "email": "hello@risetogether.org",
+    "phone": "(404) 555-0178",
+    "address": "250 Auburn Ave NE, Atlanta, GA 30303",
+    "office_hours": "Mon-Fri 9am-5pm, Sat 10am-2pm"
+  },
+  "social": {
+    "instagram": "https://instagram.com/risetogether",
+    "facebook": "https://facebook.com/risetogether",
+    "twitter": "https://twitter.com/risetogether",
+    "linkedin": "https://linkedin.com/company/risetogether"
+  },
+  "sections": {
+    "hero": true,
+    "impact": true,
+    "programs": true,
+    "events": true,
+    "volunteer": true,
+    "donate": true,
+    "about": true,
+    "contact": true,
+    "footer": true,
+    "blog": false,
+    "newsletter": false
+  },
+  "impact": {
+    "people_served": "10,000+",
+    "programs": "12",
+    "volunteers": "500+",
+    "years": "8"
+  },
+  "programs": [
+    {
+      "title": "Youth Mentorship",
+      "description": "After-school mentoring for ages 12-18, pairing young people with dedicated community leaders who guide them toward academic success and personal growth.",
+      "image": "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&h=600&fit=crop"
+    },
+    {
+      "title": "Community Garden",
+      "description": "Urban farming initiative turning vacant lots into thriving gardens that provide fresh produce and bring neighbors together.",
+      "image": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=600&fit=crop"
+    },
+    {
+      "title": "Tech Literacy",
+      "description": "Free computer classes for seniors and underserved communities, teaching essential digital skills from basic computing to online safety.",
+      "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=600&fit=crop"
+    },
+    {
+      "title": "Emergency Relief",
+      "description": "Rapid disaster response and family assistance providing food, shelter, and essential supplies when communities need it most.",
+      "image": "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&h=600&fit=crop"
+    }
+  ],
+  "events": [
+    {
+      "title": "Summer Block Party & Fundraiser",
+      "date": "July 19, 2026",
+      "time": "12:00 PM - 6:00 PM",
+      "location": "Piedmont Park, Atlanta"
+    },
+    {
+      "title": "Tech Literacy Graduation Ceremony",
+      "date": "August 8, 2026",
+      "time": "5:00 PM - 7:30 PM",
+      "location": "Rise Together Community Center"
+    },
+    {
+      "title": "Annual Harvest Festival",
+      "date": "September 20, 2026",
+      "time": "10:00 AM - 4:00 PM",
+      "location": "Community Garden, Auburn Ave"
+    }
+  ],
+  "volunteer_roles": ["Mentor", "Event Coordinator", "Tech Instructor", "Garden Lead"],
+  "donate_tiers": [
+    {
+      "name": "Friend",
+      "amount": "$25/mo",
+      "features": ["Monthly impact report", "Donor newsletter", "Community event invites"],
+      "popular": false
+    },
+    {
+      "name": "Champion",
+      "amount": "$50/mo",
+      "features": ["All Friend benefits", "Name on donor wall", "Annual gala tickets", "Direct program updates"],
+      "popular": true
+    },
+    {
+      "name": "Patron",
+      "amount": "$100/mo",
+      "features": ["All Champion benefits", "Board meeting access", "Program naming opportunities", "VIP events & tours"],
+      "popular": false
+    }
+  ],
+  "values": ["Community", "Education", "Equity", "Action"],
+  "built_by": {
+    "name": "Altitudz",
+    "url": "https://altitudz.com"
+  }
+}
