@@ -11,10 +11,10 @@ import config from '../../site.json';
 
     <div class="grid md:grid-cols-3 gap-8 stagger-children mb-12">
       {config.donate_tiers.map((tier) => (
-        <div class={`card bg-base-100 shadow-lg border ${tier.popular ? 'border-primary border-2 relative' : 'border-base-300/50'}`}>
+        <div class={`card bg-base-100 shadow-lg ${tier.popular ? 'bordered border-primary border-2 relative scale-105' : 'border border-base-300/50'}`}>
           {tier.popular && (
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-              <span class="badge badge-primary badge-sm">Most Popular</span>
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+              <span class="badge badge-primary">Most Popular</span>
             </div>
           )}
           <div class="card-body items-center text-center">

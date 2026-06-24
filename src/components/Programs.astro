@@ -2,28 +2,28 @@
 import config from '../../site.json';
 ---
 <section id="programs" class="py-24 px-6 lg:px-12">
-  <div class="container mx-auto">
+  <div class="container mx-auto max-w-5xl">
     <div class="text-center mb-16 fade-in-up">
       <span class="badge badge-outline border-primary text-primary text-xs tracking-widest uppercase mb-4">What We Do</span>
       <h2 class="text-4xl md:text-5xl font-heading font-bold">Our Programs</h2>
       <p class="text-base-content/60 mt-4 max-w-xl mx-auto">From youth mentoring to emergency relief, our programs address the real needs of our community.</p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-8 stagger-children">
-      {config.programs.map((program) => (
-        <div class="card bg-base-100 shadow-lg border border-base-300/50 overflow-hidden lg:card-side">
-          <figure class="lg:w-2/5 shrink-0">
+    <div class="flex flex-col gap-8">
+      {config.programs.map((program, index) => (
+        <div class={`card card-side bg-base-100 shadow-lg border border-base-300/50 overflow-hidden ${index % 2 !== 0 ? 'flex-row-reverse' : ''}`}>
+          <figure class="w-2/5 shrink-0 hidden md:block">
             <img
               src={program.image}
               alt={program.title}
-              class="w-full h-48 lg:h-full object-cover"
+              class="w-full h-full object-cover"
               loading="lazy"
             />
           </figure>
-          <div class="card-body">
+          <div class="card-body justify-center">
             <h3 class="card-title font-heading text-xl">{program.title}</h3>
             <p class="text-base-content/70">{program.description}</p>
-            <div class="card-actions justify-end mt-2">
+            <div class="card-actions justify-end mt-4">
               <a href="#contact" class="btn btn-primary btn-sm">Learn More</a>
             </div>
           </div>

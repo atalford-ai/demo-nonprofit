@@ -1,137 +1,89 @@
 ---
 import config from '../../site.json';
+
+const roleDescriptions: Record<string, string> = {
+  "Mentor": "Guide and support youth ages 12-18 through weekly sessions",
+  "Event Coordinator": "Plan and execute community events and fundraisers",
+  "Tech Instructor": "Teach computer skills to seniors and underserved learners",
+  "Garden Lead": "Help maintain and grow our community garden plots",
+};
 ---
 <section id="volunteer" class="py-24 px-6 lg:px-12">
-  <div class="container mx-auto max-w-5xl">
+  <div class="container mx-auto max-w-3xl">
     <div class="text-center mb-16 fade-in-up">
       <span class="badge badge-outline border-primary text-primary text-xs tracking-widest uppercase mb-4">Join the Team</span>
       <h2 class="text-4xl md:text-5xl font-heading font-bold">Volunteer With Us</h2>
       <p class="text-base-content/60 mt-4 max-w-xl mx-auto">Your time and talent can make a real difference. Sign up below and we will match you with the right opportunity.</p>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-12 items-start">
-      <!-- Form -->
-      <div class="fade-in-up card bg-base-100 shadow-lg border border-base-300/50">
-        <div class="card-body">
-          <form class="space-y-5">
-            <div>
-              <label class="label text-sm font-medium">Full Name</label>
-              <input type="text" placeholder="Your full name" class="input input-bordered w-full bg-base-100 focus:border-primary" />
-            </div>
-            <div>
-              <label class="label text-sm font-medium">Email</label>
-              <input type="email" placeholder="you@email.com" class="input input-bordered w-full bg-base-100 focus:border-primary" />
-            </div>
-            <div>
-              <label class="label text-sm font-medium">Phone</label>
-              <input type="tel" placeholder="(555) 000-0000" class="input input-bordered w-full bg-base-100 focus:border-primary" />
-            </div>
-            <div>
-              <label class="label text-sm font-medium">Preferred Role</label>
-              <select class="select select-bordered w-full bg-base-100 focus:border-primary">
-                <option disabled selected>Choose a role...</option>
-                {config.volunteer_roles.map((role) => (
-                  <option>{role}</option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label class="label text-sm font-medium">Availability</label>
-              <select class="select select-bordered w-full bg-base-100 focus:border-primary">
-                <option disabled selected>When are you available?</option>
-                <option>Weekday mornings</option>
-                <option>Weekday afternoons</option>
-                <option>Weekday evenings</option>
-                <option>Weekends</option>
-                <option>Flexible</option>
-              </select>
-            </div>
-            <div>
-              <label class="label text-sm font-medium">Message (optional)</label>
-              <textarea placeholder="Tell us about yourself or any special skills..." class="textarea textarea-bordered w-full bg-base-100 focus:border-primary h-24"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary w-full">
-              Sign Up to Volunteer
-            </button>
-          </form>
-        </div>
-      </div>
-
-      <!-- Roles info -->
-      <div class="fade-in-up space-y-6" style="animation-delay: 0.2s;">
-        <h3 class="font-heading font-semibold text-2xl mb-6">Available Roles</h3>
-
-        <div class="space-y-4">
-          <div class="card bg-base-100 border border-base-300/50">
-            <div class="card-body py-4">
-              <div class="flex items-center gap-3">
-                <div class="bg-primary/10 rounded-lg p-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="font-heading font-semibold">Mentor</h4>
-                  <p class="text-sm text-base-content/60">Guide and support youth ages 12-18 through weekly sessions</p>
-                </div>
-              </div>
-            </div>
+    <!-- Roles as joined group -->
+    <div class="join join-vertical w-full mb-12 fade-in-up">
+      {config.volunteer_roles.map((role) => (
+        <div class="join-item border border-base-300 bg-base-100 p-5 flex items-center gap-4">
+          <div class="bg-primary/10 rounded-lg p-3 shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
           </div>
-
-          <div class="card bg-base-100 border border-base-300/50">
-            <div class="card-body py-4">
-              <div class="flex items-center gap-3">
-                <div class="bg-primary/10 rounded-lg p-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="font-heading font-semibold">Event Coordinator</h4>
-                  <p class="text-sm text-base-content/60">Plan and execute community events and fundraisers</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card bg-base-100 border border-base-300/50">
-            <div class="card-body py-4">
-              <div class="flex items-center gap-3">
-                <div class="bg-primary/10 rounded-lg p-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="font-heading font-semibold">Tech Instructor</h4>
-                  <p class="text-sm text-base-content/60">Teach computer skills to seniors and underserved learners</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card bg-base-100 border border-base-300/50">
-            <div class="card-body py-4">
-              <div class="flex items-center gap-3">
-                <div class="bg-primary/10 rounded-lg p-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="font-heading font-semibold">Garden Lead</h4>
-                  <p class="text-sm text-base-content/60">Help maintain and grow our community garden plots</p>
-                </div>
-              </div>
-            </div>
+          <div>
+            <h4 class="font-heading font-semibold">{role}</h4>
+            <p class="text-sm text-base-content/60">{roleDescriptions[role] || "Make a difference in your community"}</p>
           </div>
         </div>
+      ))}
+    </div>
 
-        <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 mt-6">
-          <p class="text-base-content/70 text-sm leading-relaxed">
-            <span class="font-semibold text-base-content">No experience required.</span> We provide full training and orientation for all volunteer roles. All we ask is a commitment of at least 4 hours per month.
-          </p>
-        </div>
+    <div class="bg-primary/5 border border-primary/20 rounded-xl p-5 text-center mb-10 fade-in-up">
+      <p class="text-base-content/70 text-sm leading-relaxed">
+        <span class="font-semibold text-base-content">No experience required.</span> We provide full training and orientation for all volunteer roles. All we ask is a commitment of at least 4 hours per month.
+      </p>
+    </div>
+
+    <!-- Form in bordered card -->
+    <div class="card bordered border-base-300 bg-base-100 shadow-lg fade-in-up">
+      <div class="card-body">
+        <h3 class="card-title font-heading text-xl justify-center mb-4">Sign Up to Volunteer</h3>
+        <form class="space-y-5">
+          <div>
+            <label class="label text-sm font-medium">Full Name</label>
+            <input type="text" placeholder="Your full name" class="input input-bordered w-full bg-base-100 focus:border-primary" />
+          </div>
+          <div>
+            <label class="label text-sm font-medium">Email</label>
+            <input type="email" placeholder="you@email.com" class="input input-bordered w-full bg-base-100 focus:border-primary" />
+          </div>
+          <div>
+            <label class="label text-sm font-medium">Phone</label>
+            <input type="tel" placeholder="(555) 000-0000" class="input input-bordered w-full bg-base-100 focus:border-primary" />
+          </div>
+          <div>
+            <label class="label text-sm font-medium">Preferred Role</label>
+            <select class="select select-bordered w-full bg-base-100 focus:border-primary">
+              <option disabled selected>Choose a role...</option>
+              {config.volunteer_roles.map((role) => (
+                <option>{role}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label class="label text-sm font-medium">Availability</label>
+            <select class="select select-bordered w-full bg-base-100 focus:border-primary">
+              <option disabled selected>When are you available?</option>
+              <option>Weekday mornings</option>
+              <option>Weekday afternoons</option>
+              <option>Weekday evenings</option>
+              <option>Weekends</option>
+              <option>Flexible</option>
+            </select>
+          </div>
+          <div>
+            <label class="label text-sm font-medium">Message (optional)</label>
+            <textarea placeholder="Tell us about yourself or any special skills..." class="textarea textarea-bordered w-full bg-base-100 focus:border-primary h-24"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-full">
+            Sign Up to Volunteer
+          </button>
+        </form>
       </div>
     </div>
   </div>

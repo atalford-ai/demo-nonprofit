@@ -1,48 +1,42 @@
 ---
 import config from '../../site.json';
----
-<section class="min-h-[90vh] flex items-center pt-16">
-  <div class="container mx-auto px-6 lg:px-12">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <!-- Left: Text -->
-      <div class="fade-in-up">
-        <span class="badge badge-outline border-primary text-primary text-xs tracking-widest uppercase mb-4">Making a Difference</span>
-        <h1 class="text-5xl md:text-7xl font-heading font-bold leading-tight mb-6">
-          Community<span class="text-primary">.</span>
-          <br />
-          Impact<span class="text-primary">.</span> Change<span class="text-primary">.</span>
-        </h1>
-        <p class="text-lg text-base-content/70 max-w-md mb-8">
-          {config.description}
-        </p>
-        <div class="flex gap-4 flex-wrap">
-          <a href="#volunteer" class="btn btn-primary btn-lg px-8">
-            Get Involved
-          </a>
-          <a href="#programs" class="btn btn-outline btn-lg px-8">
-            Our Programs
-          </a>
-        </div>
-      </div>
 
-      <!-- Right: Community image -->
-      <div class="fade-in-up relative" style="animation-delay: 0.3s;">
-        <div class="relative aspect-square max-w-lg mx-auto">
-          <div class="absolute inset-0 bg-primary/10 rounded-3xl blur-3xl"></div>
-          <div class="relative bg-base-200 rounded-3xl overflow-hidden aspect-square border border-base-300/50">
-            <img
-              src="https://www.shutterstock.com/shutterstock/photos/2574289155/display_1500/stock-photo-teamworking-engineers-in-data-center-using-diagnostic-tools-and-system-monitoring-software-to-2574289155.jpg"
-              alt="African American professional leading community change"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <!-- Floating stat badge -->
-          <div class="absolute -bottom-4 -left-4 bg-base-200 border border-base-300/50 rounded-2xl p-4 shadow-xl">
-            <p class="text-xs text-base-content/60 uppercase tracking-wider">People Served</p>
-            <p class="text-2xl font-heading font-bold text-primary">{config.impact.people_served}</p>
-          </div>
-        </div>
+const stats = [
+  { value: config.impact.people_served, label: "People Served" },
+  { value: config.impact.programs, label: "Active Programs" },
+  { value: config.impact.volunteers, label: "Volunteers" },
+  { value: config.impact.years, label: "Years of Service" },
+];
+---
+<section class="hero min-h-[90vh]" style={`background-image: url(https://www.shutterstock.com/shutterstock/photos/2574289155/display_1500/stock-photo-teamworking-engineers-in-data-center-using-diagnostic-tools-and-system-monitoring-software-to-2574289155.jpg);`}>
+  <div class="hero-overlay bg-gradient-to-b from-neutral/80 via-neutral/60 to-neutral/90"></div>
+  <div class="hero-content text-neutral-content flex-col w-full max-w-6xl py-24">
+    <div class="text-center mb-12">
+      <span class="badge badge-outline border-primary text-primary text-xs tracking-widest uppercase mb-6">Making a Difference</span>
+      <h1 class="text-5xl md:text-7xl font-heading font-bold leading-tight mb-6">
+        Community<span class="text-primary">.</span> Impact<span class="text-primary">.</span> Change<span class="text-primary">.</span>
+      </h1>
+      <p class="text-lg text-neutral-content/80 max-w-2xl mx-auto mb-8">
+        {config.description}
+      </p>
+      <div class="flex gap-4 flex-wrap justify-center">
+        <a href="#volunteer" class="btn btn-primary btn-lg px-8">
+          Get Involved
+        </a>
+        <a href="#programs" class="btn btn-outline btn-lg px-8 border-neutral-content/50 text-neutral-content hover:bg-neutral-content hover:text-neutral">
+          Our Programs
+        </a>
       </div>
+    </div>
+
+    <!-- Stats row embedded in hero -->
+    <div class="stats stats-vertical md:stats-horizontal shadow bg-base-100/10 backdrop-blur-sm border border-neutral-content/20 w-full max-w-4xl">
+      {stats.map((stat) => (
+        <div class="stat text-center">
+          <div class="stat-value text-primary text-3xl font-heading">{stat.value}</div>
+          <div class="stat-desc text-neutral-content/70 text-sm mt-1">{stat.label}</div>
+        </div>
+      ))}
     </div>
   </div>
 </section>
